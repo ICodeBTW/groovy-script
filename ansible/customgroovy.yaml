@@ -1,0 +1,13 @@
+---
+- name: Deploy to Jenkins Node before testing 
+  hosts: localhost
+  vars:
+    script_name: "sample-groovy-new.template"
+  tasks:
+    - debug:
+        msg: "Testing local deployment"
+    - ansible.builtin.copy:
+        src: /var/lib/jenkins/workspace/groovy-script/templates/test/{{ script_name }}
+        dest: /var/lib/jenkins/email-templates/
+        remote_src: true
+    

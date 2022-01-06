@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+    
+    environment {
+        BEBE="This is envi"  
+    }
+
+    stages {
+        stage("Test"){
+            steps{
+
+            script{              
+                    env.Works = "This works lolol"
+                }            
+             }
+        }
+        stage("ansible deploy")
+        {
+
+            script{
+                sh """ 
+
+                    anisble -i ansible/inventory/local.yml -m customgroovy.yaml
+
+                """
+            }
+
+        }
+        stage('Email Test') {
+            
+            steps {
+                echo 'Hello World'
+                script{
+                env.BEBE = "Sadge works only from here :/"
+                 emailext body: '''${SCRIPT, template="groovy-html-new.template"}''',  subject: 'test1',  saveOutput: true
+                // env.body = '''${SCRIPT, template="groovy-html.template"}'''
+                // sh "echo ${env.body}"
+                sh """ cat Always-1.txt """
+                    
+                }
+            }
+        }
+    }
+}
+
