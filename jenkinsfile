@@ -41,6 +41,17 @@ pipeline {
                 }
             }
         }
+
+        stage('Testing for failed email') {
+            steps {
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh "exit 1"
+                }
+                 emailext body: '''${SCRIPT, template="sample-groovy-new.template"}''',  subject: 'test1',  saveOutput: true
+                sh """ cat Always-\${BUILD_NUMBER}.txt """
+            }
+        }
+        
     }
 }
 
