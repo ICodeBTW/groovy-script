@@ -33,7 +33,7 @@ pipeline {
                 echo 'Hello World'
                 script{
                 env.BEBE = "Sadge works only from here :/"
-                 emailext body: '''${SCRIPT, template="groovy-html-new.template"}''',  subject: 'test1',  saveOutput: true
+                 emailext body: '''${SCRIPT, template="sample-groovy-new.template"}''',  subject: 'test1',  saveOutput: true
                 // env.body = '''${SCRIPT, template="groovy-html.template"}'''
                 // sh "echo ${env.body}"
                 sh """ cat Always-\${BUILD_NUMBER}.txt """
