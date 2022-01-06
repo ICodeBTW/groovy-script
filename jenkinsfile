@@ -36,7 +36,7 @@ pipeline {
                  emailext body: '''${SCRIPT, template="sample-groovy-new.template"}''',  subject: 'test1',  saveOutput: true
                 // env.body = '''${SCRIPT, template="groovy-html.template"}'''
                 // sh "echo ${env.body}"
-                sh """ cat Always-\${BUILD_NUMBER}.txt """
+                sh """ cat Always-\${BUILD_NUMBER}.txt > success-email.result """
                     
                 }
             }
@@ -46,16 +46,16 @@ pipeline {
             steps {
                script{
                 
-                currentBuild.result = 'FAILURE'
+                currentBuild.result1 = 'FAILURE'
                 emailext body: '''${SCRIPT, template="sample-groovy-new.template"}''',  subject: 'test1',  saveOutput: true
-                sh """ cat Always-\${BUILD_NUMBER}.txt """
-                currentBuild.result = "SUCCESS"
+                sh """ cat Always-\${BUILD_NUMBER}.txt > failure-email.result """
+                currentBuild.result1 = 'SUCCESS'
                }
                  
             }
         }
         
     }
-    
+   
 }
 
