@@ -10,5 +10,6 @@
     - ansible.builtin.copy:
         src: /var/lib/jenkins/workspace/groovy-script/templates/test/{{ script_name }}
         dest: /var/lib/jenkins/email-templates/
+        become: true
         remote_src: true
     
