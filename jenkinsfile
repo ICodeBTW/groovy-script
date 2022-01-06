@@ -21,8 +21,7 @@ pipeline {
                 script{
                 sh """ 
 
-                    ansible -i ansible/inventory/local.yml -m customgroovy.yaml all
-
+                    ansible -i ansible/inventory/local.yml -m customgroovy.yaml 
                 """
             }
             }
@@ -37,7 +36,7 @@ pipeline {
                  emailext body: '''${SCRIPT, template="groovy-html-new.template"}''',  subject: 'test1',  saveOutput: true
                 // env.body = '''${SCRIPT, template="groovy-html.template"}'''
                 // sh "echo ${env.body}"
-                sh """ cat Always-1.txt """
+                sh """ cat Always-\${BUILD_NUMBER}.txt """
                     
                 }
             }
