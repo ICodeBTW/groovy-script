@@ -21,7 +21,7 @@ pipeline {
                 script{
                 sh """ 
 
-                    ansible-playbook customgroovy.yaml 
+                    ansible-playbook ansible/customgroovy.yaml
                 """
             }
             }
