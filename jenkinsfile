@@ -14,19 +14,19 @@ pipeline {
                 }            
              }
         }
-        stage("ansible deploy")
-        {
+        // stage("ansible deploy")
+        // {
 
-            steps{
-                script{
-                sh """ 
+        //     steps{
+        //         script{
+        //         sh """ 
 
-                    ansible-playbook ansible/customgroovy.yaml
-                """
-            }
-            }
+        //             ansible-playbook ansible/customgroovy.yaml
+        //         """
+        //     }
+        //     }
 
-        }
+        // }
         stage('Email Test') {
             
             steps {
@@ -46,14 +46,11 @@ pipeline {
             steps {
                script{
                 
-                // currentBuild.result = 'FAILURE'\
-                try{
-                    sh "exit 1"
-                }catch(exc){
-                    emailext body: '''${SCRIPT, template="sample-groovy-new.template"}''',  subject: 'test1',  saveOutput: true
-                     sh """ cat Always-\${BUILD_NUMBER}.txt > failure-email.result """
-                     
-                }
+                 $currentBuild.result = 'FAILURE'
+                 emailext body: '''${SCRIPT, template="sample-groovy-new.template"}''',  subject: 'test1',  saveOutput: true
+                 sh """ cat Always-\${BUILD_NUMBER}.txt > failure-email.result """
+                 $currentBuild.result = null                     
+
                 
                }
                  
