@@ -46,10 +46,10 @@ pipeline {
             steps {
                script{
                 
-                 currentBuild.result = 'FAILURE'
+                 currentBuild.currentResult = 'FAILURE'
                  emailext body: '''${SCRIPT, template="sample-groovy-new.template"}''',  subject: 'test1',  saveOutput: true
                  sh """ cat Always-\${BUILD_NUMBER}.txt > failure-email.result """
-                //  currentBuild.result = 'SUCCESS'                     
+                 currentBuild.currentResult = 'SUCCESS'                     
 
                 
                }
