@@ -56,8 +56,10 @@ pipeline {
 
         stage("Reset stage")
         {
-            script{
+            steps{
+                script{
                 currentBuild.result = 'SUCCESS'
+            }
             }
         }
         
