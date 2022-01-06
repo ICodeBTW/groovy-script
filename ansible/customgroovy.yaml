@@ -1,6 +1,7 @@
 ---
 - name: Deploy to Jenkins Node before testing 
   hosts: localhost
+  connection: local 
   vars:
     script_name: "sample-groovy-new.template"
   tasks:
