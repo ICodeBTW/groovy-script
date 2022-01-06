@@ -46,10 +46,13 @@ pipeline {
             steps {
                script{
                 
-                 currentBuild.rawBuild.@result = hudson.model.Result.FAILURE
-                 emailext body: '''${SCRIPT, template="sample-groovy-new.template"}''',  subject: 'test1',  saveOutput: true
+                  catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
+                    sh "exit 1"
+                    emailext body: '''${SCRIPT, template="sample-groovy-new.template"}''',  subject: 'test1',  saveOutput: true
                  sh """ cat Always-\${BUILD_NUMBER}.txt > failure-email.result """
-                 currentBuild.rawBuild.@result = hudson.model.Result.SUCCESS
+                }
+                 
+               
                    
 
                 
