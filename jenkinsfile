@@ -44,21 +44,20 @@ pipeline {
 
         stage('Testing for failed email') {
             steps {
-                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-                    sh "exit 1"
-                }
-                 
+               script{
+                
+                currentBuild.result = 'FAILURE'
+                emailext body: '''${SCRIPT, template="sample-groovy-new.template"}''',  subject: 'test1',  saveOutput: true
+                sh """ cat Always-\${BUILD_NUMBER}.txt """
+                currentBuild.result = "SUCCESS"
+               }
                  
             }
         }
         
     }
     post{
-        always{
-                emailext body: '''${SCRIPT, template="sample-groovy-new.template"}''',  subject: 'test1',  saveOutput: true
-                sh """ cat Always-\${BUILD_NUMBER}.txt """
-        }
-
+         
     }
 }
 
