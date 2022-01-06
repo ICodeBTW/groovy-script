@@ -21,7 +21,7 @@ pipeline {
                 script{
                 sh """ 
 
-                    anisble -i ansible/inventory/local.yml -m customgroovy.yaml
+                    ansible -i ansible/inventory/local.yml -m customgroovy.yaml all
 
                 """
             }
