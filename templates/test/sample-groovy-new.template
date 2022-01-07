@@ -1,3 +1,5 @@
+<% build.result == hudson.model.Result.FAILURE %>
+
 <STYLE>
   BODY, TABLE, TD, TH, P {
     font-family: Calibri, Verdana, Helvetica, sans serif;
