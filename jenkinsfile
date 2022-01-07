@@ -47,7 +47,7 @@ pipeline {
                script{
                 
                   catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
-                    buildResult.result = 'FAILURE'
+                    currentBuild.result = 'FAILURE'
                     emailext body: '''${SCRIPT, template="sample-groovy-new.template"}''',  subject: 'test1',  saveOutput: true
                  sh """ cat Always-\${BUILD_NUMBER}.txt > failure-email1.result """
                    sh "exit 1"  
