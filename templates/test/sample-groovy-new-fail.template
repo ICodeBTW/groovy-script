@@ -1,4 +1,6 @@
-<% build.result = hudson.model.Result.FAILURE %>
+<% def envEnviron = it.getAction("org.jenkinsci.plugins.workflow.cps.EnvActionImpl").getEnvironment()
+   result = envEnviron['result']
+%\>
 
 <STYLE>
   BODY, TABLE, TD, TH, P {
@@ -42,7 +44,7 @@
     padding-left: 5px;
   }
   .tr-title {
-    background-color: <%= (build.result == null || build.result.toString() == 'SUCCESS') ? '#27AE60' : build.result.toString() == 'FAILURE' ? '#E74C3C' : '#f4e242' %>;
+    background-color: <%= (result == null || result.toString() == 'SUCCESS') ? '#27AE60' : result.toString() == 'FAILURE' ? '#E74C3C' : '#f4e242' %>;
   }
   .test {
     padding-left: 20px;
@@ -59,7 +61,7 @@
   <table class="section">
     <tr class="tr-title">
       <td class="td-title-main" colspan=2>
-        BUILD ${build.result ?: 'COMPLETED'}
+        BUILD ${ result ?: 'COMPLETED'}
       </td>
     </tr>
     <tr>
@@ -240,7 +242,7 @@
 
 <!-- CONSOLE OUTPUT -->
   <%
-  if ( build.result == hudson.model.Result.FAILURE ) { %>
+  if ( result == hudson.model.Result.FAILURE ) { %>
   <table class="section" cellpadding="0" cellspacing="0">
     <tr class="tr-title">
       <td class="td-title">CONSOLE OUTPUT</td>
@@ -256,4 +258,4 @@
   <% } %>
 </BODY>
 
-<% build.result = hudson.model.Result.SUCCESS %>
+ 
