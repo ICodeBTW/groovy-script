@@ -62,7 +62,7 @@
     </tr>
     <tr>
       <td>URL:</td>
-      <td>*Changes*</A></td>
+      <td><A href="*CHANGES*">*CHANGES*</A></td>
     </tr>
     <tr>
       <td>Project:</td>
@@ -70,15 +70,15 @@
     </tr>
     <tr>
       <td>Date:</td>
-      <td>Thu, 06 Jan 2022 06:57:05 -0500</td>
+      <td>*CHANGES*</td>
     </tr>
     <tr>
       <td>Duration:</td>
-      <td>42 sec and counting</td>
+      <td>*CHANGES*</td>
     </tr>
     <tr>
       <td>Cause:</td>
-      <td> Started by user vm-controller </td>
+      <td>*CHANGES*</td>
     </tr>
   </table>
   <br/>
@@ -91,19 +91,9 @@
     </tr>
     
     <tr>
-      <td>
-        Revision
-        
-        by <B>shreenidhihk</B>
-      </td>
-      <td>Updated Jenkins file</td>
+      <td colspan="2">No Changes</td>
     </tr>
-        
-    <tr>
-      <td class="filesChanged">edit</td>
-      <td>templates/test/sample-groovy-new.template</td>
-    </tr>
-        
+    
   </table>
   <br/>
   
