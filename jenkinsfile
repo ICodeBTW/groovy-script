@@ -45,25 +45,9 @@ pipeline {
         stage('Testing for failed email') {
             steps {
                script{
-
-                catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
-                  catchError(buildResult: 'FAILURE', stageResult: 'SUCCESS') {
-     
-                    sh "exit 1"
-
+                 emailext body: '''${SCRIPT, template="sample-groovy-new-fail.template"}''',  subject: 'test1',  saveOutput: true
+                 sh """ cat Always-\${BUILD_NUMBER}.txt > failure-email.result """
                 }
-
-                 emailext body: '''${SCRIPT, template="sample-groovy-new.template"}''',  subject: 'test1',  saveOutput: true
-                 sh """ cat Always-\${BUILD_NUMBER}.txt > failure-email1.result """
-                 
-                }
-
-                currentBuild.rawBuild.@result = hudson.model.Result.SUCCESS
-                   
-
-                
-               }
-                 
             }
         }
 
