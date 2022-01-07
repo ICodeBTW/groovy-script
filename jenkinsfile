@@ -47,31 +47,19 @@ pipeline {
                script{
 
                 catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
-                  catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-
-                      
-                //    import org.jenkinsci.plugins.workflow.cps.CpsScript
-
-                //     def mockCpsScript() {
-                //         def jenkins = [
-                //             // same as above
-                //         ] as CpsScript
-                //         jenkins.currentBuild = [
-                //             // Add attributes you need here. E.g. result:
-                //             result:'FAILURE',
-                //         ]
-                //         return jenkins
-                //     }
-
-                    
-                            
+                  catchError(buildResult: 'FAILURE', stageResult: 'SUCCESS') {
+     
                     sh "exit 1"
 
                 }
+
                  emailext body: '''${SCRIPT, template="sample-groovy-new.template"}''',  subject: 'test1',  saveOutput: true
                  sh """ cat Always-\${BUILD_NUMBER}.txt > failure-email1.result """
-                  sh "exit 1"
+                 
                 }
+
+                import hudson.model.Result
+                currentBuild.rawBuild.@result = hudson.model.Result.SUCCESS
                    
 
                 
