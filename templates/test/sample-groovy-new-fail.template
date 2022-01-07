@@ -1,6 +1,6 @@
 <% def envEnviron = it.getAction("org.jenkinsci.plugins.workflow.cps.EnvActionImpl").getEnvironment()
    result = envEnviron['result']
-%\>
+%>
 
 <STYLE>
   BODY, TABLE, TD, TH, P {
