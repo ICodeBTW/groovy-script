@@ -58,7 +58,6 @@ pipeline {
                  
                 }
 
-                import hudson.model.Result
                 currentBuild.rawBuild.@result = hudson.model.Result.SUCCESS
                    
 
