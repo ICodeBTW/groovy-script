@@ -47,7 +47,17 @@ pipeline {
                script{
                  env.result = hudson.model.Result.FAILURE
                  emailext body: '''${SCRIPT, template="sample-groovy-new-fail.template"}''',  subject: 'test1',  saveOutput: true
-                 sh """ cat Always-\${BUILD_NUMBER}.txt > failure-email-wroking.result """
+                 sh """ cat Always-\${BUILD_NUMBER}.txt > failure-email.result """
+                }
+            }
+        }
+
+        stage('Testing if things work') {
+            steps {
+               script{
+
+                   sh "python test-outputs.py"
+                  
                 }
             }
         }
