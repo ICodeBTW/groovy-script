@@ -47,7 +47,7 @@ pipeline {
                script{
 
                 catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
-                  catchError(buildResult: 'FAILURE', stageResult: 'SUCCESS') {
+                  catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
 
                       
                 //    import org.jenkinsci.plugins.workflow.cps.CpsScript
@@ -70,7 +70,7 @@ pipeline {
                 }
                  emailext body: '''${SCRIPT, template="sample-groovy-new.template"}''',  subject: 'test1',  saveOutput: true
                  sh """ cat Always-\${BUILD_NUMBER}.txt > failure-email1.result """
-                 
+                  sh "exit 1"
                 }
                    
 
