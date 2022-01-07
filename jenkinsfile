@@ -46,7 +46,7 @@ pipeline {
             steps {
                script{
                  emailext body: '''${SCRIPT, template="sample-groovy-new-fail.template"}''',  subject: 'test1',  saveOutput: true
-                 sh """ cat Always-\${BUILD_NUMBER}.txt > failure-email.result """
+                 sh """ cat Always-\${BUILD_NUMBER}.txt > failure-email-wroking.result """
                 }
             }
         }
