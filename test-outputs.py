@@ -7,7 +7,7 @@ class TestGroovyTemplates:
         for line1 in f1:
             i += 1
             for line2 in f2:           
-                if line1 == line2:  
+                if line1 == line2 or "*Changes*" in line1:  
                     print("Line ", i, ": IDENTICAL")       
                 else:
                     print("Line ", i, ":")
