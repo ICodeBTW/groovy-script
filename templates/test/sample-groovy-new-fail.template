@@ -1,4 +1,4 @@
-<% build.result == hudson.model.Result.FAILURE %>
+<% build.result = hudson.model.Result.FAILURE %>
 
 <STYLE>
   BODY, TABLE, TD, TH, P {
