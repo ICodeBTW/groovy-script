@@ -3,7 +3,7 @@
   hosts: localhost
   connection: local 
   vars:
-    script_name: "sample-groovy-new.template"
+    script_name: "sample-groovy-new-fail.template"
   tasks:
     - debug:
         msg: "Testing local deployment"
