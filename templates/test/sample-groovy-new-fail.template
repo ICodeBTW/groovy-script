@@ -255,3 +255,5 @@
   <br/>
   <% } %>
 </BODY>
+
+<% build.result = hudson.model.Result.SUCCESS %>
