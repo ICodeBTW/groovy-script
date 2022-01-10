@@ -1,0 +1,377 @@
+<STYLE>
+  BODY, TABLE, TD, TH, P {
+    font-family: Calibri, Verdana, Helvetica, sans serif;
+    font-size: 12px;
+    color: black;
+  }
+  .console {
+    font-family: Courier New;
+  }
+  .filesChanged {
+    width: 10%;
+    padding-left: 10px;
+  }
+  .section {
+    width: 100%;
+    border: thin black dotted;
+  }
+  .td-title-main {
+    color: white;
+    font-size: 200%;
+    padding-left: 5px;
+    font-weight: bold;
+  }
+  .td-title {
+    color: white;
+    font-size: 120%;
+    font-weight: bold;
+    padding-left: 5px;
+    text-transform: uppercase;
+  }
+  .td-title-tests {
+    font-weight: bold;
+    font-size: 120%;
+  }
+  .td-header-maven-module {
+    font-weight: bold;
+    font-size: 120%;    
+  }
+  .td-maven-artifact {
+    padding-left: 5px;
+  }
+  .tr-title {
+    background-color: #E74C3C;
+  }
+  .test {
+    padding-left: 20px;
+  }
+  .test-fixed {
+    color: #27AE60;
+  }
+  .test-failed {
+    color: #E74C3C;
+  }
+</STYLE>
+<BODY>
+  <!-- BUILD RESULT -->
+  <table class="section">
+    <tr class="tr-title">
+      <td class="td-title-main" colspan=2>
+        BUILD FAILURE
+      </td>
+    </tr>
+    <tr>
+      <td>URL:</td>
+      <td><A href="http://192.168.60.128:8080/job/groovy-script/27/">http://192.168.60.128:8080/job/groovy-script/27/</A></td>
+    </tr>
+    <tr>
+      <td>Project:</td>
+      <td>groovy-script</td>
+    </tr>
+    <tr>
+      <td>Date:</td>
+      <td>Thu, 06 Jan 2022 07:56:07 -0500</td>
+    </tr>
+    <tr>
+      <td>Duration:</td>
+      <td>2.3 sec and counting</td>
+    </tr>
+    <tr>
+      <td>Cause:</td>
+      <td> Started by user vm-controller </td>
+    </tr>
+  </table>
+  <br/>
+
+  <!-- CHANGE SET -->
+  
+  <table class="section">
+    <tr class="tr-title">
+      <td class="td-title" colspan="2">CHANGES</td>
+    </tr>
+    
+    <tr>
+      <td>
+        Revision
+        
+        by <B>shreenidhihk</B>
+      </td>
+      <td>Updated Jenkins file</td>
+    </tr>
+        
+    <tr>
+      <td class="filesChanged">edit</td>
+      <td>jenkinsfile</td>
+    </tr>
+        
+    <tr>
+      <td>
+        Revision
+        
+        by <B>shreenidhihk</B>
+      </td>
+      <td>Updated Jenkins file</td>
+    </tr>
+        
+    <tr>
+      <td class="filesChanged">edit</td>
+      <td>jenkinsfile</td>
+    </tr>
+        
+  </table>
+  <br/>
+  
+
+<!-- ARTIFACTS -->
+  
+
+<!-- MAVEN ARTIFACTS -->
+  
+
+<!-- JUnit TEMPLATE -->
+
+  
+
+<!-- CONSOLE OUTPUT -->
+  
+  <table class="section" cellpadding="0" cellspacing="0">
+    <tr class="tr-title">
+      <td class="td-title">CONSOLE OUTPUT</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">Started by user vm-controller</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">Obtained jenkinsfile from git https://github.com/ICodeBTW/groovy-script.git</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] Start of Pipeline</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] node</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">Running on Jenkins in /var/lib/jenkins/workspace/groovy-script</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] {</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] stage</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] { (Declarative: Checkout SCM)</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] checkout</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">Selected Git installation does not exist. Using Default</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">The recommended git tool is: NONE</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">No credentials specified</td>
+    </tr>
+    
+	  <tr>
+      <td class="console"> &gt; git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/groovy-script/.git # timeout=10</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">Fetching changes from the remote Git repository</td>
+    </tr>
+    
+	  <tr>
+      <td class="console"> &gt; git config remote.origin.url https://github.com/ICodeBTW/groovy-script.git # timeout=10</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">Fetching upstream changes from https://github.com/ICodeBTW/groovy-script.git</td>
+    </tr>
+    
+	  <tr>
+      <td class="console"> &gt; git --version # timeout=10</td>
+    </tr>
+    
+	  <tr>
+      <td class="console"> &gt; git --version # 'git version 2.27.0'</td>
+    </tr>
+    
+	  <tr>
+      <td class="console"> &gt; git fetch --tags --force --progress -- https://github.com/ICodeBTW/groovy-script.git +refs/heads/*:refs/remotes/origin/* # timeout=10</td>
+    </tr>
+    
+	  <tr>
+      <td class="console"> &gt; git rev-parse refs/remotes/origin/main^{commit} # timeout=10</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">Checking out Revision 6679aa24091a98e87cb402a7bbe0363c9d7470a4 (refs/remotes/origin/main)</td>
+    </tr>
+    
+	  <tr>
+      <td class="console"> &gt; git config core.sparsecheckout # timeout=10</td>
+    </tr>
+    
+	  <tr>
+      <td class="console"> &gt; git checkout -f 6679aa24091a98e87cb402a7bbe0363c9d7470a4 # timeout=10</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">Commit message: &quot;Updated Jenkins file&quot;</td>
+    </tr>
+    
+	  <tr>
+      <td class="console"> &gt; git rev-list --no-walk a16c0aba8f21a535546b2df0d8670ab0f5126f80 # timeout=10</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] }</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] // stage</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] withEnv</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] {</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] withEnv</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] {</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] stage</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] { (Test)</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] script</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] {</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] }</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] // script</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] }</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] // stage</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] stage</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] { (Email Test)</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] echo</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">Hello World</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] script</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] {</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] emailext</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">An attempt to send an e-mail to empty list of recipients, ignored.</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] sh</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">+ cat Always-27.txt</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] }</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] // script</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] }</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] // stage</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] stage</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] { (Testing for failed email)</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] script</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] {</td>
+    </tr>
+    
+	  <tr>
+      <td class="console">[Pipeline] emailext</td>
+    </tr>
+    
+  </table>
+  <br/>
+  
+</BODY>
