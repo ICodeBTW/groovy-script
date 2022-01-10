@@ -36,7 +36,7 @@ pipeline {
                  emailext body: '''${SCRIPT, template="sample-groovy-new.template"}''',  subject: 'test1',  saveOutput: true
                 // env.body = '''${SCRIPT, template="groovy-html.template"}'''
                 // sh "echo ${env.body}"
-                sh """ cat Always-\${BUILD_NUMBER}.txt > success-email.result """
+                sh """ cat Always-\${BUILD_NUMBER}.txt > success-email.html """
                     
                 }
             }
@@ -47,7 +47,7 @@ pipeline {
                script{
                  env.result = hudson.model.Result.FAILURE
                  emailext body: '''${SCRIPT, template="sample-groovy-new-fail.template"}''',  subject: 'test1',  saveOutput: true
-                 sh """ cat Always-\${BUILD_NUMBER}.txt > failure-email.result """
+                 sh """ cat Always-\${BUILD_NUMBER}.txt > failure-email.html """
                 }
             }
         }
@@ -56,7 +56,7 @@ pipeline {
             steps {
                script{
 
-                   sh "python test-outputs.py"
+                   sh "pytest -v"
                   
                 }
             }
