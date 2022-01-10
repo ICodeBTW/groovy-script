@@ -8,7 +8,7 @@ import sys
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.color import Color
-from selenium.webdriver.support.relative_locator import By
+# from selenium.webdriver.support.relative_locator import By
 
 
 # import org.openqa.selenium.chrome.ChromeOptions;
