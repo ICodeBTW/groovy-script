@@ -20,7 +20,7 @@ from time import sleep
 def chrome_driver():
     options = Options()
     options.add_argument("headless")
-    chrome_driver_ = webdriver.Chrome(executable_path="../resources/chromedriver.exe",options=options)
+    chrome_driver_ = webdriver.Chrome(executable_path="../../resources/chromedriver.exe",options=options)
     file = os.path.abspath("success-email.html")
     chrome_driver_.get(file)
     chrome_driver_.save_screenshot("se.png")
